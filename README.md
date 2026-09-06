@@ -2,13 +2,23 @@
 
 Power BI analysis of 18 months of customer complaints for **Northline Air**, a fictional UK short-haul carrier operating from Manchester, Gatwick and Edinburgh to 18 European destinations.
 
-**Period:** January 2025 – June 2026
-**Scope:** 977 complaints across 45,886 flight legs, £172,360 in compensation
+**Period:** January 2025 – June 2026  
+**Scope:** 977 complaints across 45,886 flight legs, £172,360 in compensation  
 **Tools:** Power BI (Power Query / M, DAX)
 
 > The dataset is synthetic and generated for this project. It does not represent any real airline's operations.
 
-**Companion project:** flight-level operational data and departure punctuality analysis for the same carrier and period — [Airline Delay Analysis](https://github.com/TheLordBass/Airline-Delay-Analysis). Several measures on this page use flight volumes from that dataset as a denominator.
+**Companion project:** flight-level operational data and departure punctuality analysis for the same carrier and period — [Airline Departure Punctuality Analysis](https://github.com/TheLordBass/Airline-Departure-Punctuality-Analysis). Several measures on this page use flight volumes from that dataset as a denominator.
+
+---
+
+## The dashboard
+
+![Customer complaints dashboard](Airline%20complaints.png)
+
+One page: four KPI cards across the top, complaint volume and compensation on a combined axis by category, channel mix, the monthly time series, and station complaint rates normalised per 1,000 flights.
+
+**At a glance:** 977 complaints, £172.36K paid out, an average resolution time of 22.37 days, and Delay as the most common category. The category chart is the clearest single visual — complaint count and compensation fall together across all six categories, which is the point made below about exposure being volume-driven.
 
 ---
 
@@ -141,7 +151,8 @@ DIVIDE( COUNTROWS( complaints ), [Eligible Flights] ) * 1000
 
 | File | Description |
 |---|---|
-| `complaints.pbix` | Power BI report, including all Power Query steps and DAX measures |
+| `Airline data.pbix` | Power BI report, including all Power Query steps and DAX measures |
+| `Airline complaints.png` | Screenshot of the report page |
 
 ---
 
